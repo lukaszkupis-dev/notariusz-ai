@@ -1,39 +1,54 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen, GraduationCap, ShieldCheck } from 'lucide-react';
 
-export default function Page() {
+export default function StudioPage() {
   return (
-    <main>
+    <div className="min-h-screen bg-[#FDFCF7] text-[#2D2D2D] font-serif">
       {/* Nawigacja */}
-      <header style={{ position: 'sticky', top: 0, zIndex: 20, background: 'rgba(240, 238, 233, 0.85)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--line)' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '18px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div className="font-serif" style={{ fontSize: 20 }}>
-            Notariusz w świecie <em style={{ color: 'var(--sage-600)', fontStyle: 'normal' }}>AI</em>
-          </div>
-          <nav style={{ display: 'flex', gap: 28, fontSize: 13 }}>
-            <span style={{ color: 'var(--ink-mute)' }}>Baza wiedzy</span>
-            <span style={{ color: 'var(--ink-mute)' }}>Kurs online</span>
-          </nav>
-          <button style={{ background: 'var(--ink)', color: 'var(--cream)', padding: '10px 18px', borderRadius: 999, border: 'none', cursor: 'pointer', fontSize: 13 }}>
-            Zaloguj się
-          </button>
+      <nav className="p-6 flex justify-between items-center border-b border-[#7A8C70]/10">
+        <span className="text-xl font-semibold tracking-tight">Notariusz w świecie AI</span>
+        <div className="space-x-8 text-sm uppercase tracking-widest text-[#7A8C70]">
+          <a href="#" className="hover:opacity-70">Baza wiedzy</a>
+          <a href="#" className="hover:opacity-70">Kurs online</a>
+          <a href="#" className="hover:opacity-70 font-bold">Zaloguj się</a>
         </div>
-      </header>
+      </nav>
 
       {/* Hero Section */}
-      <section style={{ maxWidth: 1280, margin: '0 auto', padding: '120px 40px 80px' }}>
-        <h1 className="font-serif" style={{ fontSize: 'clamp(48px, 6vw, 96px)', lineHeight: 0.98, letterSpacing: '-0.025em', margin: '0 0 28px', fontWeight: 400 }}>
-          Sztuka notarialna<br/>
-          <em style={{ color: 'var(--sage-600)', fontStyle: 'italic' }}>spotyka</em> sztuczną inteligencję.
+      <main className="max-w-5xl mx-auto pt-32 pb-20 px-6">
+        <h1 className="text-7xl md:text-8xl mb-8 leading-[0.9] tracking-tighter">
+          Sztuka notarialna <br />
+          <span className="italic text-[#7A8C70]">spotyka</span> AI.
         </h1>
-        <p style={{ fontSize: 19, lineHeight: 1.5, color: 'var(--ink-soft)', maxWidth: 580, margin: '0 0 44px' }}>
-          Praktyczne narzędzia, darmowy kurs i kuratorska baza wiedzy dla notariuszy oraz aplikantów. Wszystko w jednym bezpiecznym miejscu.
+        
+        <p className="text-xl max-w-xl mb-12 leading-relaxed opacity-80">
+          Ekskluzywna przestrzeń dla nowoczesnych rejentów. Praktyczne narzędzia, 
+          bezpieczne modele i społeczność, która definiuje przyszłość zawodu.
         </p>
-        <div style={{ display: 'flex', gap: 14 }}>
-          <button style={{ background: 'var(--ink)', color: 'var(--cream)', padding: '16px 28px', borderRadius: 999, border: 'none', display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', fontSize: 14 }}>
-            Zacznij od kursu <ArrowRight size={18} />
-          </button>
+
+        <button className="group flex items-center gap-3 bg-[#7A8C70] text-white px-8 py-4 rounded-full hover:bg-[#66755d] transition-all">
+          Zacznij od kursu
+          <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+        </button>
+      </main>
+
+      {/* Sekcje funkcjonalne */}
+      <section className="grid md:grid-cols-3 border-t border-[#7A8C70]/20">
+        <div className="p-12 border-r border-[#7A8C70]/20 hover:bg-[#7A8C70]/5 transition-colors">
+          <BookOpen className="mb-6 text-[#7A8C70]" size={32} />
+          <h3 className="text-2xl mb-4 text-[#7A8C70]">Baza Wiedzy</h3>
+          <p className="opacity-70">Wyselekcjonowane promptu i instrukcje przygotowane pod polski system prawny.</p>
+        </div>
+        <div className="p-12 border-r border-[#7A8C70]/20 hover:bg-[#7A8C70]/5 transition-colors">
+          <GraduationCap className="mb-6 text-[#7A8C70]" size={32} />
+          <h3 className="text-2xl mb-4 text-[#7A8C70]">Kurs Online</h3>
+          <p className="opacity-70">Darmowa ścieżka edukacyjna: od podstaw GPT po zaawansowaną analizę aktów.</p>
+        </div>
+        <div className="p-12 hover:bg-[#7A8C70]/5 transition-colors">
+          <ShieldCheck className="mb-6 text-[#7A8C70]" size={32} />
+          <h3 className="text-2xl mb-4 text-[#7A8C70]">Bezpieczeństwo</h3>
+          <p className="opacity-70">Gwarancja przetwarzania danych wewnątrz UE (Frankfurt) zgodnie z RODO.</p>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
